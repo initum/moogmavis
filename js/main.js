@@ -41,6 +41,9 @@ function muHandler(e){
 	window.removeEventListener("mousemove",mmHandler);
 	window.removeEventListener("mouseup",muHandler);
 }
+
+
+
 function generatePDF() {
 	
 	const element = document.getElementById('invoice');
@@ -53,3 +56,28 @@ function generatePDF() {
 	};
 	html2pdf().set(opt).from(element).save();
 }
+function generatePDFAll() {
+	
+	const element = document.getElementById('allPDF');
+	var opt = {
+		margin:       1,
+		filename:     'Mavis patches.pdf',
+		image:        { type: 'jpeg', quality: 1 },
+		html2canvas:  { width: 1200},
+		jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
+	};
+	html2pdf().set(opt).from(element).save();
+}
+$(document).ready(function(){
+	$('.slider').slick({
+	
+});
+});
+// function convertCanvasToImage() {
+// 	let canvas = document.getElementById("canvas");
+// 	let image = new Image();
+// 	image.src = canvas.toDataURL();
+// 	return image;
+// }
+// let pnGImage = convertCanvasToImage();
+// document.appendChild(pnGImage);

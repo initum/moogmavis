@@ -165,6 +165,7 @@ body{
 .slider{
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	margin-top: 70px;
 	gap: 40px;
 }
@@ -174,7 +175,9 @@ body{
 .slider img{
 	width: 100%;
 }
+.slider-item{
 
+}
 @media screen and (max-width: 1728px){
 	.container{
 		display: flex;
@@ -195,5 +198,8 @@ body{
 	}
 	.collection_slider:before{
 		display: none;
+	}
+	#slider-item{
+		width: 30%;
 	}
 }
