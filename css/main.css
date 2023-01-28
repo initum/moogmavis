@@ -1,0 +1,140 @@
+body{
+	font-family: Arial, sans-serif;
+}
+.wrapper{
+	display: flex;
+	flex-direction: column;
+	padding-left: 200px;
+	max-width: 1190px;
+}
+.heading{
+	font-family: Arial, sans-serif;
+	margin-bottom: 0;
+}
+.template_img{
+	position: relative;
+
+}
+.rotate{
+	position: absolute;
+}
+.fold{
+	top: 98px;
+	left: 269px;
+}
+.pitch{
+	top: 95px;
+	left: 394px;
+}
+.vco-wave{
+	top: 95px;
+	left: 520px;
+}
+.puls-width{
+	top: 95px;
+	left: 646px;
+}
+.cutoff{
+	top: 95px;
+	left: 770px;
+}
+.resonance{
+	top: 95px;
+	left: 895px;
+}
+.volume{
+	top: 95px;
+	left: 1021px;
+}
+.one-lvl{
+	top: 227px;
+	left: 270px;
+}
+.vco-mod-mix{
+	top: 227px;
+	left: 395px;
+}
+.pitch-mod-amt{
+	top: 227px;
+	left: 520px;
+}
+.pwm-amt{
+	top: 227px;
+	left: 645px;
+}
+.vcf-mod-mix{
+	 top: 227px;
+	left: 770px;
+}
+.vcf-mod-amt{
+	top: 227px;
+	left: 895px;
+}
+.attenuator{
+	top: 360px;
+	left: 270px;
+}
+.lfo-rate{
+	top: 360px;
+	left: 394px;
+}
+.lfo-wave{
+	top: 360px;
+	left: 520px;
+}
+.attack{
+	top: 360px;
+	left: 645px;
+}
+.decay{
+	top: 360px;
+	left: 770px;
+}
+.sustain{
+	top: 360px;
+	left: 895px;
+}
+.release{
+	top: 360px;
+	left: 1020px;
+}
+.kb-scale{
+	bottom: 165px;
+	left: 269px;
+}
+.glide{
+	bottom: 85px;
+	left: 269px;
+}
+.cables{
+	position: absolute;
+	top: 20px;
+	left: 0;
+}
+.save{
+	margin-top: 15px;
+	border: none;
+	font-size: 16px;
+	font-weight: 500;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	padding: 10px 28px;
+	cursor: pointer;
+	background: #00945E;
+	border-radius: 20px;
+	color: #fff;
+	outline: none;
+	transition: all .3s ease-in-out;
+}
+.save:hover{
+	background: rgba(0, 148, 94, 0.78);
+}
+.add{
+	margin-bottom: 20px;
+}
+.buttons_save{
+	display: flex;
+	gap:40px;
+	align-self: end;
+}
