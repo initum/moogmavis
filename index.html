@@ -6,20 +6,23 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="html2canvas-master/dist/html2canvas.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <title>MOOG MAVIS</title>
 </head>
 <body>
 <div class="container">
-    <div class="wrapper">
+    <div class="wrapper" id="wrapper">
         <div id="invoice">
                 <h1 class="heading">
                     MOOG MAVIS
                 </h1>
             <button class="save add" id="addCable">add cable</button>
-                <div class="template_img">
+                <div class="template_img" id="template">
                     <div class="cables">
                         <svg width="300" height="690" xmlns="http://www.w3.org/2000/svg">
                             <path d="M135 153 Q 93 379 64 433" stroke="#00945E" fill="transparent" stroke-width="15"></path>
@@ -996,7 +999,8 @@
         </div>
         <div class="buttons_save">
             <button class="save collection">save collection</button>
-            <button class="save screenshot">screenshot</button>
+<!--            <button class="save screenshot">screenshot</button>-->
+            <button class="save" id='but_screenshot' onclick='screenshot();'>screenshot</button>
             <button class="save pdf" onclick="generatePDF()">save PDF</button>
         </div>
     </div>
@@ -1007,16 +1011,31 @@
 
         <div class="gallery">
             <h1 class="heading gallery_heading">my collection</h1>
-            <div class="slider">
-                <img class="slider-item" src="img/patch.jpg" alt="">
-                <img class="slider-item" src="img/patch.jpg" alt="">
-                <img class="slider-item" src="img/patch.jpg" alt="">
-            </div>
-            <button class="save save_all">save all PDF</button>
+                <div class="allPDF" id="allPDF">
+                    <div class="slider" id="slider">
+
+                    </div>
+                </div>
+            <button class="save save_all" onclick="generatePDFAll()">save all PDF</button>
         </div>
 
     </div>
 </div>
+<!-- Script -->
+<script type='text/javascript'>
+	function screenshot(){
+		html2canvas(document.getElementById('template')).then(function(canvas) {
+			document.getElementById("slider").appendChild(canvas);
+			canvas.style = 'width: 90%';
+			canvas.id = 'canvas'
+			canvas.classList.toggle('slider-item');
+			if ($(window).width() < 1728){
+				canvas.style = 'width: 30%';
+            }
+
+		});
+	}
+</script>
     <script src="js/propeller.js"></script>
     <script src="js/main.js"></script>
 </body>
