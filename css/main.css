@@ -16,6 +16,25 @@ body{
 	font-family: Arial, sans-serif;
 	margin-bottom: 0;
 }
+.header{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.name{
+	display: flex;
+	gap: 20px;
+	align-items: center;
+}
+.patch_name-text{
+    border-radius: 22px;
+	border: 1px solid #DFDFDF;
+	padding: 10px 15px;
+	outline: none;
+	min-width: 400px;
+	color: #00945E;
+	font-weight: 500;
+}
 .template_img{
 	position: relative;
 
@@ -177,6 +196,9 @@ body{
 }
 .slider-item{
 
+}
+.save_patch{
+	margin: 0;
 }
 @media screen and (max-width: 1728px){
 	.container{
