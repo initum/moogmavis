@@ -1,17 +1,16 @@
 $('.rotate').propeller({inertia: 0, speed: 0});
 
-
 var c1 = document.querySelectorAll("circle")[0],
 	c2 = document.querySelectorAll("circle")[1],
 	c3 = document.querySelectorAll("circle")[2],
 	path = document.querySelectorAll("path")[0],
 	drag, d = {x1:135,y1:153,x2:93,y2:379,x3:64,y3:433};
-window.addEventListener("mousedown",mdHandler);
+window.addEventListener("mousedown", mdHandler);
 function mdHandler(e){
-	if(e.srcElement instanceof SVGCircleElement){
-		drag = e.srcElement;
-		drag.x = e.srcElement.getAttribute("cx");
-		drag.y = e.srcElement.getAttribute("cy");
+	if(e.target instanceof SVGCircleElement){
+		drag = e.target;
+		drag.x = e.target.getAttribute("cx");
+		drag.y = e.target.getAttribute("cy");
 		drag.clientX = e.clientX;
 		drag.clientY = e.clientY;
 		
